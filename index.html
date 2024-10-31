@@ -24,6 +24,8 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        position: relative;
+        z-index: 2; /* Ensure content is above bubbles */
       }
 
       /* Background Animation */
@@ -62,18 +64,19 @@
       /* Top Decorative Lights */
       .top {
         width: 100%;
-        max-width: 100vw;
         height: auto;
         display: flex;
         justify-content: space-around;
+        position: relative;
+        z-index: 3; /* Ensure lights are above bubbles */
       }
 
       .img1 {
-        width: 50px;
+        width: 10%; /* Responsive size */
         height: auto;
       }
 
-      .light2, .light3, .light4, .light5, .light6, .light7, .light8, .light9 {
+      .light {
         height: 15px;
         width: 15px;
         border-radius: 50%;
@@ -81,14 +84,14 @@
       }
 
       /* Light Colors and Shadows */
-      .light2 { background-color: #009432; margin-top: 50px; }
-      .light3 { background-color: #EA2027; margin-top: 80px; }
-      .light4 { background-color: #0652DD; margin-top: 50px; }
-      .light5 { background-color: #D980FA; margin-top: 80px; }
-      .light6 { background-color: #6F1E51; margin-top: 50px; }
-      .light7 { background-color: #C4E538; margin-top: 80px; }
-      .light8 { background-color: #A3CB38; margin-top: 50px; }
-      .light9 { background-color: #12CBC4; margin-top: 80px; }
+      .light2 { background-color: #009432; }
+      .light3 { background-color: #EA2027; }
+      .light4 { background-color: #0652DD; }
+      .light5 { background-color: #D980FA; }
+      .light6 { background-color: #6F1E51; }
+      .light7 { background-color: #C4E538; }
+      .light8 { background-color: #A3CB38; }
+      .light9 { background-color: #12CBC4; }
 
       @keyframes glowEffect {
         0%, 100% { box-shadow: 0 0 0px; }
@@ -139,7 +142,10 @@
           font-size: 8vw;
         }
         .wishDiv {
-          font-size: 3vw;
+          font-size: 4vw;
+        }
+        .img1 {
+          width: 50px; /* Fixed size for large screens */
         }
       }
 
@@ -148,7 +154,10 @@
           font-size: 10vw;
         }
         .wishDiv {
-          font-size: 4vw;
+          font-size: 5vw;
+        }
+        .img1 {
+          width: 40px; /* Slightly smaller for medium screens */
         }
       }
 
@@ -157,17 +166,23 @@
           font-size: 12vw;
         }
         .wishDiv {
-          font-size: 5vw;
+          font-size: 6vw;
+        }
+        .img1 {
+          width: 30px; /* Smaller for tablets */
         }
       }
 
       @media (max-width: 767px) {
         .greeting {
-          font-size: 16vw;
+          font-size: 18vw; /* Larger font for small screens */
         }
         .wishDiv {
-          font-size: 6vw;
-          padding: 0 10px;
+          font-size: 8vw;
+          padding: 0 15px; /* Added padding for better text alignment */
+        }
+        .img1 {
+          width: 25px; /* Smallest size for mobile */
         }
       }
     </style>
@@ -176,34 +191,34 @@
     <div class="main">
       <div class="top">
         <div class="light1"><img src="https://clip2art.com/images/paper-lantern-clipart-20.png" alt="" class="img1"></div>
-        <div class="light2"></div>
-        <div class="light3"></div>
-        <div class="light4"></div>
-        <div class="light5"></div>
-        <div class="light6"></div>
-        <div class="light7"></div>
-        <div class="light8"></div>
-        <div class="light9"></div>
+        <div class="light light2"></div>
+        <div class="light light3"></div>
+        <div class="light light4"></div>
+        <div class="light light5"></div>
+        <div class="light light6"></div>
+        <div class="light light7"></div>
+        <div class="light light8"></div>
+        <div class="light light9"></div>
         <div class="light0"><img src="https://clip2art.com/images/paper-lantern-clipart-20.png" alt="" class="img1"></div>
       </div>
       <h1 class="greeting">Happy Diwali</h1>
       <div class="wishDiv">
         <h5 class="wish">May your Diwali be a rangoli of lights brightening up your home with happiness and prosperity!</h5>
-        <span class="name"> ~ From Hansa, Bhavesh, Krishna, Vishal ~</span>
-        <span class="name">  Padharia Family </span
+        <span class="name"> ~ From Hansa, Bhavesh, Krishna, Vishal ~</span><br>
+        <span class="name">  Padharia Family </span>
       </div>
     </div>
     
     <ul class="bg-bubbles">
+      <li><img src="star_PNG41532.png" alt="" class="str1"></li>
       <li></li>
+      <li><img src="star_PNG41481.png" alt="" class="str2"></li>
       <li></li>
+      <li><img src="star_PNG41503.png" alt="" class="str3"></li>
       <li></li>
+      <li><img src="star_PNG41531.png" alt="" class="str4"></li>
       <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li><img src="star_PNG41521.png" alt="" class="str5"></li>
       <li></li>
     </ul>
   </body>
