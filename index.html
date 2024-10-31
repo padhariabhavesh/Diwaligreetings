@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Diwali Greeting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes" rel="stylesheet">
+    <style>
+      /* General Styling */
+      body {
+        margin: 0;
+        padding: 0;
+        animation: changeBG 30s infinite;
+        overflow: hidden;
+      }
+
+      .main {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Background Animation */
+      @keyframes changeBG {
+        0% {background-color: #55efc4;}
+        10% {background-color: #81ecec;}
+        20% {background-color: #74b9ff;}
+        30% {background-color: #a29bfe;}
+        40% {background-color: #6c5ce7;}
+        50% {background-color: #0984e3;} 
+        60% {background-color: #00cec9;}
+        70% {background-color: #00b894;}
+        80% {background-color: #fdcb6e;}
+        90% {background-color: #d63031;}
+        100% {background-color: #e84393;}
+      }
+
+      /* Greeting and Wish Styling */
+      .greeting {
+        margin-top: -100px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 150px;
+        font-weight: 800;
+        animation: changeShad 3s infinite;
+      }
+
+      @keyframes changeShad {
+        0%, 100% {text-shadow: 0px 0px 5px #000;}
+        50% {text-shadow: 5px 5px 10px #000;}
+      }
+
+      .wishDiv {
+        margin-top: -90px;
+        width: 300px;
+        font-family: 'Great Vibes', cursive;
+        font-size: 40px;
+        color: #1B1464;
+        text-align: center;
+      }
+
+      .name {
+        float: right;
+        margin-top: -25px;
+      }
+
+      /* Top Decorative Lights */
+      .top {
+        width: 100vw;
+        height: 300px;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .img1 {
+        width: 100px;
+        height: auto;
+      }
+
+      .light2, .light3, .light4, .light5, .light6, .light7, .light8, .light9 {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        animation: glowEffect 3s infinite;
+      }
+
+      /* Light Colors and Shadows */
+      .light2 { background-color: #009432; margin-top: 70px; }
+      .light3 { background-color: #EA2027; margin-top: 100px; }
+      .light4 { background-color: #0652DD; margin-top: 70px; }
+      .light5 { background-color: #D980FA; margin-top: 100px; }
+      .light6 { background-color: #6F1E51; margin-top: 70px; }
+      .light7 { background-color: #C4E538; margin-top: 100px; }
+      .light8 { background-color: #A3CB38; margin-top: 70px; }
+      .light9 { background-color: #12CBC4; margin-top: 100px; }
+
+      @keyframes glowEffect {
+        0%, 100% { box-shadow: 0 0 0px; }
+        50% { box-shadow: 0 0 20px currentColor; }
+      }
+
+      /* Background Bubbles */
+      .bg-bubbles {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .bg-bubbles li {
+        position: absolute;
+        list-style: none;
+        display: block;
+        bottom: -160px;
+        width: 40px;
+        height: 40px;
+        animation: bubbleMovement 25s infinite linear;
+      }
+
+      .bg-bubbles li:nth-child(2) { left: 20%; width: 80px; height: 80px; animation-delay: 2s; animation-duration: 17s; }
+      .bg-bubbles li:nth-child(3) { left: 25%; animation-delay: 4s; }
+      .bg-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 22s; background-color: rgba(255, 255, 255, 0.25); }
+      .bg-bubbles li:nth-child(6) { left: 80%; width: 120px; height: 120px; animation-delay: 3s; background-color: rgba(255, 255, 255, 0.2); }
+      .bg-bubbles li:nth-child(7) { left: 32%; width: 160px; height: 160px; animation-delay: 7s; }
+      .bg-bubbles li:nth-child(8) { left: 55%; width: 20px; height: 20px; animation-delay: 15s; animation-duration: 40s; }
+      .bg-bubbles li:nth-child(9) { left: 25%; width: 10px; height: 10px; animation-delay: 2s; animation-duration: 40s; background-color: rgba(255, 255, 255, 0.3); }
+      .bg-bubbles li:nth-child(10) { left: 80%; width: 160px; height: 160px; animation-delay: 11s; }
+
+      /* Bubble Animation */
+      @keyframes bubbleMovement {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-700px) rotate(600deg); }
+      }
+
+      .str1, .str2, .str3, .str4, .str5 {
+        opacity: 0.5;
+      }
+
+      .str1 { width: 40px; }
+      .str2 { width: 80px; }
+      .str3 { width: 100px; }
+      .str4 { width: 60px; }
+      .str5 { width: 500px; }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="top">
+        <div class="light1"><img src="https://clip2art.com/images/paper-lantern-clipart-20.png" alt="" class="img1"></div>
+        <div class="light2"></div>
+        <div class="light3"></div>
+        <div class="light4"></div>
+        <div class="light5"></div>
+        <div class="light6"></div>
+        <div class="light7"></div>
+        <div class="light8"></div>
+        <div class="light9"></div>
+        <div class="light0"><img src="https://clip2art.com/images/paper-lantern-clipart-20.png" alt="" class="img1"></div>
+      </div>
+      <h1 class="greeting fadeInU">Happy Diwali</h1>
+      <div class="wishDiv">
+        <h5 class="wish">May your diwali be a rangoli of lights brightening up your home with happiness and prosperity!</h5>
+        <span class="name"> ~From Padharia Family</span>
+      </div>
+    </div>
+    
+    <ul class="bg-bubbles">
+      <li><img src="star_PNG41532.png" alt="" class="str1"></li>
+      <li></li>
+      <li><img src="star_PNG41481.png" alt="" class="str2"></li>
+      <li></li>
+      <li><img src="star_PNG41503.png" alt="" class="str3"></li>
+      <li></li>
+      <li><img src="star_PNG41531.png" alt="" class="str4"></li>
+      <li></li>
+      <li><img src="star_PNG41521.png" alt="" class="str5"></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
