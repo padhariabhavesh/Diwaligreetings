@@ -44,7 +44,6 @@
       /* Greeting and Wish Styling */
       .greeting {
         font-family: 'Dancing Script', cursive;
-        font-size: 10vw;
         font-weight: 800;
         animation: changeShad 3s infinite;
         margin: 0;
@@ -56,10 +55,7 @@
       }
 
       .wishDiv {
-        width: 90%;
-        max-width: 300px;
         font-family: 'Great Vibes', cursive;
-        font-size: 4vw;
         color: #1B1464;
         margin: 0;
       }
@@ -141,27 +137,40 @@
       }
 
       /* Responsive Design */
-      @media (max-width: 768px) {
+      @media (min-width: 1200px) {
         .greeting {
-          font-size: 14vw;
-          margin-top: -10px;
+          font-size: 8vw;
         }
         .wishDiv {
-          font-size: 5vw;
-          margin-top: 10px;
+          font-size: 3vw;
         }
       }
 
-      @media (max-width: 480px) {
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .greeting {
+          font-size: 10vw;
+        }
+        .wishDiv {
+          font-size: 4vw;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        .greeting {
+          font-size: 12vw;
+        }
+        .wishDiv {
+          font-size: 5vw;
+        }
+      }
+
+      @media (max-width: 767px) {
         .greeting {
           font-size: 16vw;
         }
         .wishDiv {
           font-size: 6vw;
           padding: 0 10px;
-        }
-        .img1 {
-          width: 30px;
         }
       }
     </style>
@@ -182,7 +191,7 @@
       </div>
       <h1 class="greeting fadeInU">Happy Diwali</h1>
       <div class="wishDiv">
-        <h5 class="wish">May your diwali be a rangoli of lights brightening up your home with happiness and prosperity!</h5>
+        <h5 class="wish">May your Diwali be a rangoli of lights brightening up your home with happiness and prosperity!</h5>
         <span class="name"> ~From Padharia Family</span>
       </div>
     </div>
@@ -194,10 +203,4 @@
       <li></li>
       <li><img src="star_PNG41503.png" alt="" class="str3"></li>
       <li></li>
-      <li><img src="star_PNG41531.png" alt="" class="str4"></li>
-      <li></li>
-      <li><img src="star_PNG41521.png" alt="" class="str5"></li>
-      <li></li>
-    </ul>
-  </body>
-</html>
+      <li><img src="
