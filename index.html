@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy New Year 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> <!-- Changed Font -->
     <style>
         body, html {
-            background-color: #000;
-            color: #fff;
+            background-color: #000; /* Black background for a cinematic feel */
+            color: #FFD700; /* Gold color for text */
             width: 100%;
             height: 100%;
             margin: 0;
@@ -22,59 +23,48 @@
         }
 
         h1 {
-            font-size: 5vw; /* Responsive font size */
+            font-family: 'Dancing Script', cursive; /* Changed Font */
+            font-size: 7vw;
             margin: 0;
-            animation: bounceColor 2s infinite;
+            opacity: 0; /* Start invisible for animation */
+            animation: fadeIn 1s forwards, scaleIn 1s forwards; /* Fade and scale animation */
         }
 
-        @keyframes bounceColor {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-                color: #fff;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
             }
-            20% {
-                transform: translateY(-10px) scale(1.1);
-                color: #FFD700;
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
             }
             50% {
-                transform: translateY(0) scale(1.1);
-                color: #ff69b4;
+                transform: scale(1.1);
             }
-            80% {
-                transform: translateY(-5px) scale(1.05);
-                color: #FFD700;
+            100% {
+                transform: scale(1);
             }
         }
 
         p {
-            font-size: 3vw; /* Responsive font size */
-            margin: 10px 0; /* Reduced margin for responsiveness */
-        }
-
-        .highlight {
-            color: #FFD700;
-            font-style: italic;
+            font-size: 3vw; 
+            margin: 10px 0; 
+            opacity: 0; /* Start invisible for animation */
+            animation: fadeIn 1.5s forwards;
+            animation-delay: 0.5s; /* Delay for paragraph appearance */
+            color: #FF4500; /* Orange for contrast and vibrancy */
         }
 
         footer {
             position: absolute;
-            bottom: 3vh; /* Responsive bottom position */
-            font-size: 2vw; /* Responsive font size */
-            color: #fff;
-        }
-
-        /* Confetti Styles */
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            animation: fall 3s infinite;
-            opacity: 0.8;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100px); }
-            100% { transform: translateY(100vh); }
+            bottom: 3vh; 
+            font-size: 2vw; 
+            color: #FFD700; /* Gold footer text */
         }
 
         canvas {
@@ -86,38 +76,36 @@
         /* Media Queries for Better Responsiveness */
         @media (max-width: 600px) {
             h1 {
-                font-size: 8vw; /* Increase size for smaller screens */
+                font-size: 8vw;
             }
             p {
-                font-size: 4vw; /* Increase size for smaller screens */
+                font-size: 4vw;
             }
             footer {
-                font-size: 3vw; /* Increase footer font size for smaller screens */
+                font-size: 3vw;
             }
         }
 
         @media (min-width: 1200px) {
             h1 {
-                font-size: 3vw; /* Decrease size for larger screens */
+                font-size: 5vw;
             }
             p {
-                font-size: 2vw; /* Decrease size for larger screens */
+                font-size: 2.5vw;
             }
             footer {
-                font-size: 1.5vw; /* Decrease footer font size for larger screens */
+                font-size: 1.5vw;
             }
         }
     </style>
 </head>
 <body>
     <canvas id="canvas"></canvas>
-    <h1>
+    <h1 id="greeting">
       “Wishing you a Happy Gujarati New Year filled<br>
       with prosperity, health, and peace.<br>
       May all your dreams come true!”
-  </h1>
-  
-      
+    </h1>
 
     <footer>&copy; Bhavesh Padharia & Family</footer>
 
@@ -125,199 +113,89 @@
         // Canvas Setup
         var canvas = document.getElementById("canvas"),
             ctx = canvas.getContext("2d"),
-            width = 0,
-            height = 0,
-            vanishPointY = 0,
-            vanishPointX = 0,
-            focalLength = 300,
-            angleX = 180,
-            angleY = 180,
-            angleZ = 180,
-            angle = 0,
-            cycle = 0,
-            colors = {r: 255, g: 0, b: 0};
+            width = window.innerWidth,
+            height = window.innerHeight;
 
         canvas.width = width;
         canvas.height = height;
 
-        function Emitter() {
-            this.reset();
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
         }
 
-        Emitter.prototype.reset = function () {
-            var PART_NUM = 200,
-                x = (Math.random() * 400) - 200,
-                y = (Math.random() * 400) - 200,
-                z = (Math.random() * 800) - 200;
+        // Set random color for the heading
+        document.getElementById("greeting").style.color = getRandomColor();
 
-            this.x = x || 0;
-            this.y = y || 0;
-            this.z = z || 0;
+        // Particle constructor
+        function Particle(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 5 + 2; // Size of the particle
+            this.speedX = (Math.random() - 0.5) * 5; // Horizontal speed
+            this.speedY = (Math.random() - 0.5) * 5; // Vertical speed
+            this.color = getRandomColor(); // Random color for each particle
+        }
 
-            var color = [~~(Math.random() * 150) + 10, ~~(Math.random() * 150) + 10, ~~(Math.random() * 150) + 10];
-            this.particles = [];
+        Particle.prototype.update = function() {
+            this.x += this.speedX;
+            this.y += this.speedY;
 
-            for (var i = 0; i < PART_NUM; i++) {
-                this.particles.push(new Particle(this.x, this.y, this.z, {
-                    r: colors.r,
-                    g: colors.g,
-                    b: colors.b
-                }));
+            // Reset particle position if it goes out of bounds
+            if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                this.x = width / 2;
+                this.y = height / 2;
+                this.speedX = (Math.random() - 0.5) * 5;
+                this.speedY = (Math.random() - 0.5) * 5;
+                this.color = getRandomColor();
             }
         };
 
-        Emitter.prototype.update = function () {
-            var partLen = this.particles.length;
+        Particle.prototype.draw = function() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        };
 
-            angleY = (angle - vanishPointX) * 0.0001;
-            angleX = (angle - vanishPointX) * 0.0001;
+        // Create particles
+        var particles = [];
+        for (var i = 0; i < 100; i++) {
+            particles.push(new Particle(width / 2, height / 2)); // Start particles from the center
+        }
 
-            this.particles.sort(function (a, b) {
-                return b.z - a.z;
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            // Draw stars in the background
+            drawStars();
+            // Update and draw particles
+            particles.forEach(p => {
+                p.update();
+                p.draw();
             });
-
-            for (var i = 0; i < partLen; i++) {
-                this.particles[i].update();
-            }
-
-            if (this.particles.length <= 0) {
-                this.reset();
-            }
-        };
-
-        Emitter.prototype.render = function (imgData) {
-            var data = imgData.data;
-
-            for (i = 0; i < this.particles.length; i++) {
-                var particle = this.particles[i],
-                    dist = Math.sqrt((particle.x - particle.ox) ** 2 + (particle.y - particle.oy) ** 2 + (particle.z - particle.oz) ** 2);
-
-                if (dist > 255) {
-                    particle.render = false;
-                    this.particles.splice(i, 1);
-                    this.particles.length--;
-                }
-
-                if (particle.render && particle.xPos < width && particle.xPos > 0 && particle.yPos > 0 && particle.yPos < height) {
-                    for (var w = 0; w < particle.size; w++) {
-                        for (var h = 0; h < particle.size; h++) {
-                            if (particle.xPos + w < width && particle.xPos + w > 0 && particle.yPos + h > 0 && particle.yPos + h < height) {
-                                var pData = (~~(particle.xPos + w) + (~~(particle.yPos + h) * width)) * 4;
-                                data[pData] = particle.color[0];
-                                data[pData + 1] = particle.color[1];
-                                data[pData + 2] = particle.color[2];
-                                data[pData + 3] = 255 - dist;
-                            }
-                        }
-                    }
-                }
-            }
-        };
-
-        function Particle(x, y, z, color) {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-
-            this.startX = this.x;
-            this.startY = this.y;
-            this.startZ = this.z;
-
-            this.ox = this.x;
-            this.oy = this.y;
-            this.oz = this.z;
-
-            this.xPos = 0;
-            this.yPos = 0;
-
-            this.vx = (Math.random() * 10) - 5;
-            this.vy = (Math.random() * 10) - 5;
-            this.vz = (Math.random() * 10) - 5;
-
-            this.color = [color.r, color.g, color.b];
-            this.render = true;
-
-            this.size = Math.round(1 + Math.random());
+            requestAnimationFrame(animate);
         }
 
-        Particle.prototype.rotate = function () {
-            var x = this.startX * Math.cos(angleZ) - this.startY * Math.sin(angleZ),
-                y = this.startY * Math.cos(angleZ) + this.startX * Math.sin(angleZ);
-
-            this.x = x;
-            this.y = y;
-        };
-
-        Particle.prototype.update = function () {
-            var cosY = Math.cos(angleX),
-                sinY = Math.sin(angleX);
-
-            this.x = (this.startX += this.vx);
-            this.y = (this.startY += this.vy);
-            this.z = (this.startZ -= this.vz);
-            this.rotate();
-
-            this.vy += 0.1;
-            this.x += this.vx;
-            this.y += this.vy;
-            this.z -= this.vz;
-
-            this.render = false;
-
-            if (this.z > -focalLength) {
-                var scale = focalLength / (focalLength + this.z);
-
-                this.size = scale * 2;
-                this.xPos = vanishPointX + this.x * scale;
-                this.yPos = vanishPointY + this.y * scale;
-                this.render = true;
+        // Function to draw stars
+        function drawStars() {
+            const numStars = 100; // Number of stars
+            ctx.fillStyle = 'white'; // Star color
+            for (let i = 0; i < numStars; i++) {
+                const x = Math.random() * width; // Random x position
+                const y = Math.random() * height; // Random y position
+                const size = Math.random() * 2 + 1; // Random size
+                ctx.beginPath();
+                ctx.arc(x, y, size, 0, Math.PI * 2, false); // Draw star
+                ctx.fill();
             }
-        };
-
-        function render() {
-            colorCycle();
-            angleY = Math.sin(angle += 0.01);
-            angleX = Math.sin(angle);
-            angleZ = Math.sin(angle);
-
-            var imgData = ctx.createImageData(width, height);
-
-            for (var e = 0; e < 30; e++) {
-                emitters[e].update();
-                emitters[e].render(imgData);
-            }
-            ctx.putImageData(imgData, 0, 0);
-            requestAnimationFrame(render);
         }
 
-        function colorCycle() {
-            cycle += 0.6;
-            if (cycle > 100) {
-                cycle = 0;
-            }
-            colors.r = ~~(Math.sin(0.3 * cycle + 0) * 127 + 128);
-            colors.g = ~~(Math.sin(0.3 * cycle + 2) * 127 + 128);
-            colors.b = ~~(Math.sin(0.3 * cycle + 4) * 127 + 128);
-        }
-
-        var emitters = [];
-        for (let i = 0; i < 30; i++) {
-            emitters.push(new Emitter());
-        }
-
-        window.addEventListener('resize', function () {
-            width = window.innerWidth;
-            height = window.innerHeight;
-
-            canvas.width = width;
-            canvas.height = height;
-
-            vanishPointX = width / 2;
-            vanishPointY = height / 2;
-        });
-
-        window.dispatchEvent(new Event('resize'));
-        render();
+        animate();
     </script>
 </body>
 </html>
