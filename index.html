@@ -1,227 +1,323 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Diwali Greeting</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2024</title>
     <style>
-      /* General Styling */
-      body {
-        margin: 0;
-        padding: 0;
-        animation: changeBG 30s infinite;
-        overflow: hidden;
-      }
-
-      .main {
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        position: relative;
-        z-index: 2; /* Ensure content is above bubbles */
-      }
-
-      /* Background Animation */
-      @keyframes changeBG {
-        0% {background-color: #55efc4;}
-        10% {background-color: #81ecec;}
-        20% {background-color: #74b9ff;}
-        30% {background-color: #a29bfe;}
-        40% {background-color: #6c5ce7;}
-        50% {background-color: #0984e3;} 
-        60% {background-color: #00cec9;}
-        70% {background-color: #00b894;}
-        80% {background-color: #fdcb6e;}
-        90% {background-color: #d63031;}
-        100% {background-color: #e84393;}
-      }
-
-      /* Greeting and Wish Styling */
-      .greeting {
-        font-family: 'Dancing Script', cursive;
-        font-weight: 800;
-        margin: 0;
-        text-align: center; /* Center the greeting text */
-      }
-
-      .wishDiv {
-        font-family: 'Great Vibes', cursive;
-        color: #1B1464;
-        margin: 0;
-        text-align: center; /* Center the wish text */
-      }
-
-      .name {
-        display: block;
-        margin-top: -15px;
-      }
-
-      /* Top Decorative Lights */
-      .top {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        position: relative;
-        z-index: 3; /* Ensure lights are above bubbles */
-      }
-
-      .img1 {
-        width: 10%; /* Responsive size */
-        height: auto;
-      }
-
-      .light {
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        animation: glowEffect 3s infinite;
-      }
-
-      /* Light Colors and Shadows */
-      .light2 { background-color: #009432; }
-      .light3 { background-color: #EA2027; }
-      .light4 { background-color: #0652DD; }
-      .light5 { background-color: #D980FA; }
-      .light6 { background-color: #6F1E51; }
-      .light7 { background-color: #C4E538; }
-      .light8 { background-color: #A3CB38; }
-      .light9 { background-color: #12CBC4; }
-
-      @keyframes glowEffect {
-        0%, 100% { box-shadow: 0 0 0px; }
-        50% { box-shadow: 0 0 20px currentColor; }
-      }
-
-      /* Background Bubbles */
-      .bg-bubbles {
-        position: absolute;
-        top: -100px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-      }
-
-      .bg-bubbles li {
-        position: absolute;
-        list-style: none;
-        display: block;
-        bottom: -160px;
-        width: 30vw; /* 30% of viewport width */
-        height: 30vh; /* 30% of viewport height */
-        animation: bubbleMovement 25s infinite linear;
-        background-color: rgba(255, 255, 255, 0.15); /* Light transparency */
-        border-radius: 50%;
-      }
-
-      /* Specific bubbles for variation */
-      .bg-bubbles li:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 17s; }
-      .bg-bubbles li:nth-child(3) { left: 25%; animation-delay: 4s; }
-      .bg-bubbles li:nth-child(4) { left: 40%; animation-duration: 22s; background-color: rgba(255, 255, 255, 0.25); }
-      .bg-bubbles li:nth-child(6) { left: 80%; animation-delay: 3s; background-color: rgba(255, 255, 255, 0.2); }
-      .bg-bubbles li:nth-child(7) { left: 32%; animation-delay: 7s; }
-      .bg-bubbles li:nth-child(8) { left: 55%; animation-delay: 15s; animation-duration: 40s; }
-      .bg-bubbles li:nth-child(9) { left: 25%; animation-delay: 2s; animation-duration: 40s; background-color: rgba(255, 255, 255, 0.3); }
-      .bg-bubbles li:nth-child(10) { left: 80%; animation-delay: 11s; }
-
-      /* Bubble Animation */
-      @keyframes bubbleMovement {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-700px) rotate(600deg); }
-      }
-
-      /* Responsive Design */
-      @media (min-width: 1200px) {
-        .greeting {
-          font-size: 8vw;
+        body, html {
+            background-color: #000;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
         }
-        .wishDiv {
-          font-size: 4vw;
-        }
-        .img1 {
-          width: 50px; /* Fixed size for large screens */
-        }
-      }
 
-      @media (min-width: 992px) and (max-width: 1199px) {
-        .greeting {
-          font-size: 10vw;
+        h1 {
+            font-size: 5vw; /* Responsive font size */
+            margin: 0;
+            animation: bounceColor 2s infinite;
         }
-        .wishDiv {
-          font-size: 5vw;
-        }
-        .img1 {
-          width: 40px; /* Slightly smaller for medium screens */
-        }
-      }
 
-      @media (min-width: 768px) and (max-width: 991px) {
-        .greeting {
-          font-size: 12vw;
+        @keyframes bounceColor {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                color: #fff;
+            }
+            20% {
+                transform: translateY(-10px) scale(1.1);
+                color: #FFD700;
+            }
+            50% {
+                transform: translateY(0) scale(1.1);
+                color: #ff69b4;
+            }
+            80% {
+                transform: translateY(-5px) scale(1.05);
+                color: #FFD700;
+            }
         }
-        .wishDiv {
-          font-size: 6vw;
-        }
-        .img1 {
-          width: 30px; /* Smaller for tablets */
-        }
-      }
 
-      @media (max-width: 767px) {
-        .greeting {
-          font-size: 18vw; /* Larger font for small screens */
+        p {
+            font-size: 3vw; /* Responsive font size */
+            margin: 10px 0; /* Reduced margin for responsiveness */
         }
-        .wishDiv {
-          font-size: 8vw;
-          padding: 0 15px; /* Added padding for better text alignment */
+
+        .highlight {
+            color: #FFD700;
+            font-style: italic;
         }
-        .img1 {
-          width: 25px; /* Smallest size for mobile */
+
+        footer {
+            position: absolute;
+            bottom: 3vh; /* Responsive bottom position */
+            font-size: 2vw; /* Responsive font size */
+            color: #fff;
         }
-      }
+
+        /* Confetti Styles */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: fall 3s infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Media Queries for Better Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 8vw; /* Increase size for smaller screens */
+            }
+            p {
+                font-size: 4vw; /* Increase size for smaller screens */
+            }
+            footer {
+                font-size: 3vw; /* Increase footer font size for smaller screens */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 3vw; /* Decrease size for larger screens */
+            }
+            p {
+                font-size: 2vw; /* Decrease size for larger screens */
+            }
+            footer {
+                font-size: 1.5vw; /* Decrease footer font size for larger screens */
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="top">
-        <div class="light1"><img src="https://clip2art.com/images/paper-lantern-clipart-20.png" alt="" class="img1"></div>
-        <div class="light light2"></div>
-        <div class="light light3"></div>
-        <div class="light light4"></div>
-        <div class="light light5"></div>
-        <div class="light light6"></div>
-        <div class="light light7"></div>
-        <div class="light light8"></div>
-        <div class="light light9"></div>
-        <div class="light0"><img src="https://clip2art.com/images/paper-lantern-clipart-20.png" alt="" class="img1"></div>
-      </div>
-      <h1 class="greeting">Happy Diwali</h1>
-      <div class="wishDiv">
-        <h5 class="wish">May your Diwali be a rangoli of lights brightening up your home with happiness and prosperity!</h5>
-        <span class="name"> ~ From Hansa, Bhavesh, Krishna, Vishal ~</span><br>
-        <span class="name">  Padharia Family </span>
-      </div>
-    </div>
-    
-    <ul class="bg-bubbles">
-      <li><img src="star_PNG41532.png" alt="" class="str1"></li>
-      <li></li>
-      <li><img src="star_PNG41481.png" alt="" class="str2"></li>
-      <li></li>
-      <li><img src="star_PNG41503.png" alt="" class="str3"></li>
-      <li></li>
-      <li><img src="star_PNG41531.png" alt="" class="str4"></li>
-      <li></li>
-      <li><img src="star_PNG41521.png" alt="" class="str5"></li>
-      <li></li>
-    </ul>
-  </body>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <h1>
+      “Wishing you a Happy Gujarati New Year filled<br>
+      with prosperity, health, and peace.<br>
+      May all your dreams come true!”
+  </h1>
+  
+      
+
+    <footer>&copy; Bhavesh Padharia & Family</footer>
+
+    <script>
+        // Canvas Setup
+        var canvas = document.getElementById("canvas"),
+            ctx = canvas.getContext("2d"),
+            width = 0,
+            height = 0,
+            vanishPointY = 0,
+            vanishPointX = 0,
+            focalLength = 300,
+            angleX = 180,
+            angleY = 180,
+            angleZ = 180,
+            angle = 0,
+            cycle = 0,
+            colors = {r: 255, g: 0, b: 0};
+
+        canvas.width = width;
+        canvas.height = height;
+
+        function Emitter() {
+            this.reset();
+        }
+
+        Emitter.prototype.reset = function () {
+            var PART_NUM = 200,
+                x = (Math.random() * 400) - 200,
+                y = (Math.random() * 400) - 200,
+                z = (Math.random() * 800) - 200;
+
+            this.x = x || 0;
+            this.y = y || 0;
+            this.z = z || 0;
+
+            var color = [~~(Math.random() * 150) + 10, ~~(Math.random() * 150) + 10, ~~(Math.random() * 150) + 10];
+            this.particles = [];
+
+            for (var i = 0; i < PART_NUM; i++) {
+                this.particles.push(new Particle(this.x, this.y, this.z, {
+                    r: colors.r,
+                    g: colors.g,
+                    b: colors.b
+                }));
+            }
+        };
+
+        Emitter.prototype.update = function () {
+            var partLen = this.particles.length;
+
+            angleY = (angle - vanishPointX) * 0.0001;
+            angleX = (angle - vanishPointX) * 0.0001;
+
+            this.particles.sort(function (a, b) {
+                return b.z - a.z;
+            });
+
+            for (var i = 0; i < partLen; i++) {
+                this.particles[i].update();
+            }
+
+            if (this.particles.length <= 0) {
+                this.reset();
+            }
+        };
+
+        Emitter.prototype.render = function (imgData) {
+            var data = imgData.data;
+
+            for (i = 0; i < this.particles.length; i++) {
+                var particle = this.particles[i],
+                    dist = Math.sqrt((particle.x - particle.ox) ** 2 + (particle.y - particle.oy) ** 2 + (particle.z - particle.oz) ** 2);
+
+                if (dist > 255) {
+                    particle.render = false;
+                    this.particles.splice(i, 1);
+                    this.particles.length--;
+                }
+
+                if (particle.render && particle.xPos < width && particle.xPos > 0 && particle.yPos > 0 && particle.yPos < height) {
+                    for (var w = 0; w < particle.size; w++) {
+                        for (var h = 0; h < particle.size; h++) {
+                            if (particle.xPos + w < width && particle.xPos + w > 0 && particle.yPos + h > 0 && particle.yPos + h < height) {
+                                var pData = (~~(particle.xPos + w) + (~~(particle.yPos + h) * width)) * 4;
+                                data[pData] = particle.color[0];
+                                data[pData + 1] = particle.color[1];
+                                data[pData + 2] = particle.color[2];
+                                data[pData + 3] = 255 - dist;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        function Particle(x, y, z, color) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+
+            this.startX = this.x;
+            this.startY = this.y;
+            this.startZ = this.z;
+
+            this.ox = this.x;
+            this.oy = this.y;
+            this.oz = this.z;
+
+            this.xPos = 0;
+            this.yPos = 0;
+
+            this.vx = (Math.random() * 10) - 5;
+            this.vy = (Math.random() * 10) - 5;
+            this.vz = (Math.random() * 10) - 5;
+
+            this.color = [color.r, color.g, color.b];
+            this.render = true;
+
+            this.size = Math.round(1 + Math.random());
+        }
+
+        Particle.prototype.rotate = function () {
+            var x = this.startX * Math.cos(angleZ) - this.startY * Math.sin(angleZ),
+                y = this.startY * Math.cos(angleZ) + this.startX * Math.sin(angleZ);
+
+            this.x = x;
+            this.y = y;
+        };
+
+        Particle.prototype.update = function () {
+            var cosY = Math.cos(angleX),
+                sinY = Math.sin(angleX);
+
+            this.x = (this.startX += this.vx);
+            this.y = (this.startY += this.vy);
+            this.z = (this.startZ -= this.vz);
+            this.rotate();
+
+            this.vy += 0.1;
+            this.x += this.vx;
+            this.y += this.vy;
+            this.z -= this.vz;
+
+            this.render = false;
+
+            if (this.z > -focalLength) {
+                var scale = focalLength / (focalLength + this.z);
+
+                this.size = scale * 2;
+                this.xPos = vanishPointX + this.x * scale;
+                this.yPos = vanishPointY + this.y * scale;
+                this.render = true;
+            }
+        };
+
+        function render() {
+            colorCycle();
+            angleY = Math.sin(angle += 0.01);
+            angleX = Math.sin(angle);
+            angleZ = Math.sin(angle);
+
+            var imgData = ctx.createImageData(width, height);
+
+            for (var e = 0; e < 30; e++) {
+                emitters[e].update();
+                emitters[e].render(imgData);
+            }
+            ctx.putImageData(imgData, 0, 0);
+            requestAnimationFrame(render);
+        }
+
+        function colorCycle() {
+            cycle += 0.6;
+            if (cycle > 100) {
+                cycle = 0;
+            }
+            colors.r = ~~(Math.sin(0.3 * cycle + 0) * 127 + 128);
+            colors.g = ~~(Math.sin(0.3 * cycle + 2) * 127 + 128);
+            colors.b = ~~(Math.sin(0.3 * cycle + 4) * 127 + 128);
+        }
+
+        var emitters = [];
+        for (let i = 0; i < 30; i++) {
+            emitters.push(new Emitter());
+        }
+
+        window.addEventListener('resize', function () {
+            width = window.innerWidth;
+            height = window.innerHeight;
+
+            canvas.width = width;
+            canvas.height = height;
+
+            vanishPointX = width / 2;
+            vanishPointY = height / 2;
+        });
+
+        window.dispatchEvent(new Event('resize'));
+        render();
+    </script>
+</body>
 </html>
