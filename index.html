@@ -171,28 +171,12 @@
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
-            // Draw stars in the background
-            drawStars();
             // Update and draw particles
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
             requestAnimationFrame(animate);
-        }
-
-        // Function to draw stars
-        function drawStars() {
-            const numStars = 100; // Number of stars
-            ctx.fillStyle = 'white'; // Star color
-            for (let i = 0; i < numStars; i++) {
-                const x = Math.random() * width; // Random x position
-                const y = Math.random() * height; // Random y position
-                const size = Math.random() * 2 + 1; // Random size
-                ctx.beginPath();
-                ctx.arc(x, y, size, 0, Math.PI * 2, false); // Draw star
-                ctx.fill();
-            }
         }
 
         animate();
